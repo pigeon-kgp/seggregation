@@ -1,8 +1,8 @@
 import json
-f=open("/home/ss/Dropbox/Wriju/Codes/10.4.1.72_trajectory_clone/Vis/out.json", "r")
+f=open("/home/ubuntu/Desktop/trajectory_clone/Vis/out.json", "r")
 lat_lon_json = json.load(f)
-abc = open("/home/ss/Dropbox/Wriju/Codes/10.4.1.72_trajectory_clone/Vis/out_path","r")
-fout = open("/home/ss/Dropbox/Wriju/Codes/10.4.1.72_trajectory_clone/Vis/out_path_lat_lon", "w")
+abc = open("/home/ubuntu/Desktop/trajectory_clone/Vis/out_path","r")
+fout = open("/home/ubuntu/Desktop/trajectory_clone/Vis/out_path_lat_lon", "w")
 while(1):
 	line=abc.readline()
 	if not line: break

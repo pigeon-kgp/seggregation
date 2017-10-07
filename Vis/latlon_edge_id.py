@@ -10,7 +10,7 @@ from numpy import inf
 
 x1, y1, x2, y2 = sys.argv[1:]
 x1, y1, x2, y2 = map(float,[x1,y1,x2,y2])
-f=open("/home/ss/Dropbox/Wriju/Codes/10.4.1.72_trajectory_clone/Vis/out.json", "r")
+f=open("/home/ubuntu/Desktop/trajectory_clone/Vis/out.json", "r")
 lat_lon_json = json.load(f)
 
 def distance(a,b):

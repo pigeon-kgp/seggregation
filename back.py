@@ -20,7 +20,7 @@ def hello():
     print form.errors
     if request.method == 'POST':
         if request.form['btn'] == 'Randomise traffic':
-            os.system("python /home/ss/Dropbox/Wriju/Codes/10.4.1.72_trajectory_clone/Vis/net_to_json.py")
+            os.system("python /home/ubuntu/Desktop/trajectory_clone/Vis/net_to_json.py")
             flash("Done !")
             return render_template('main_map.html', form=form)
 
@@ -42,7 +42,7 @@ def hello():
         table_gen.write("0")
         table_gen.close()
 
-        os.system("python /home/ss/Dropbox/Wriju/Codes/10.4.1.72_trajectory_clone/Vis/latlon_edge_id.py "+argv_+" >/home/ss/Dropbox/Wriju/Codes/10.4.1.72_trajectory_clone/Vis/path_input")
+        os.system("python /home/ubuntu/Desktop/trajectory_clone/Vis/latlon_edge_id.py "+argv_+" >/home/ubuntu/Desktop/trajectory_clone/Vis/path_input")
         
         path_gen=open("Vis/path_input","r")
         for  i  in xrange(1,10):
@@ -52,16 +52,16 @@ def hello():
         # path_gen.close()
         flash("Please wait...")
  
-        os.system("python /home/ss/Dropbox/Wriju/Codes/10.4.1.72_trajectory_clone/Vis/table_gen.py < /home/ss/Dropbox/Wriju/Codes/10.4.1.72_trajectory_clone/Vis/table_input")
+        os.system("python /home/ubuntu/Desktop/trajectory_clone/Vis/table_gen.py < /home/ubuntu/Desktop/trajectory_clone/Vis/table_input")
         try:
             # os.system('killall firefox')
-            os.system("python /home/ss/Dropbox/Wriju/Codes/10.4.1.72_trajectory_clone/Vis/path_predict.py < /home/ss/Dropbox/Wriju/Codes/10.4.1.72_trajectory_clone/Vis/path_input")
-            os.system("python /home/ss/Dropbox/Wriju/Codes/10.4.1.72_trajectory_clone/Vis/get_lat_lon.py")
-            os.system("python /home/ss/Dropbox/Wriju/Codes/10.4.1.72_trajectory_clone/display_map.py")
+            os.system("python /home/ubuntu/Desktop/trajectory_clone/Vis/path_predict.py < /home/ubuntu/Desktop/trajectory_clone/Vis/path_input")
+            os.system("python /home/ubuntu/Desktop/trajectory_clone/Vis/get_lat_lon.py")
+            os.system("python /home/ubuntu/Desktop/trajectory_clone/display_map.py")
             # os.system('cp home/ubuntu/Desktop/trajectory_clone/_map.html home/ubuntu/Desktop/trajectory_clone/templates/_map.html')
             # os.system("killall firefox")
             return render_template("_map.html")
-            return send_file("/home/ss/Dropbox/Wriju/Codes/10.4.1.72_trajectory_clone/Vis/out_path_lat_lon", attachment_filename='path.txt')
+            return send_file("/home/ubuntu/Desktop/trajectory_clone/Vis/out_path_lat_lon", attachment_filename='path.txt')
         except:
             flash("Path not found!")
 
@@ -76,14 +76,14 @@ def hello():
 @app.route('/return-files/')
 def return_files_tut():
     try:
-        return send_file('/home/ss/Dropbox/Wriju/Codes/10.4.1.72_trajectory_clone/Vis/out.json', attachment_filename='JSON_output.json')
+        return send_file('/home/ubuntu/Desktop/trajectory_clone/Vis/out.json', attachment_filename='JSON_output.json')
     except Exception as e:
         return str(e)
 
 @app.route('/traffic_gen/')
 def traffic_new():
     flash("Please wait...")
-    os.system("python /home/ss/Dropbox/Wriju/Codes/10.4.1.72_trajectory_clone/Vis/net_to_json.py")
+    os.system("python /home/ubuntu/Desktop/trajectory_clone/Vis/net_to_json.py")
     flash("Done!")
  
 if __name__ == "__main__":

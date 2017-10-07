@@ -3,15 +3,15 @@
 from write import write_move,write_sp, auth
 thr=float(raw_input("Enter threshold (recommended 0.0001) : "))
 auth()
-path="/home/ss/Dropbox/Wriju/Codes/10.4.1.72_trajectory_clone/data"
+path="/home/ubuntu/Desktop/trajectory_clone/data"
 #path=raw_input("Enter full input path (root directory of the files) : ")
 
 '''
 ##test
 thr=0.0001
 #path="/home/mehul/1/2"
-#path ="/home/ss/Dropbox/Wriju/Codes/10.4.1.72_trajectory_clone/data2/peace"
-path = "/home/ss/Dropbox/Wriju/Codes/10.4.1.72_trajectory_clone/data3"
+#path ="/home/ubuntu/Desktop/trajectory_clone/data2/peace"
+path = "/home/ubuntu/Desktop/trajectory_clone/data3"
 def write_move(taxino,lat,lon,starttime,endtime,count,hy):
    print(starttime,endtime,count,lat,lon,"move")
    global counter
